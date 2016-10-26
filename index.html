@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt" ng-app="ilhaFilmes">
+<head>
+	<meta charset="UTF-8">
+	<title>IlhaFilmes</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="http://ilhasoft.com.br/wp-content/uploads/2015/01/favicon2.png">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+<script src="js/angular.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD_sR81GD0ahbepSbHun5XMES_eVACaYiA",
+    authDomain: "ilhafilmes-8b441.firebaseapp.com",
+    databaseURL: "https://ilhafilmes-8b441.firebaseio.com",
+    storageBucket: "ilhafilmes-8b441.appspot.com",
+    messagingSenderId: "359609890401"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="js/app.js"></script>
+<script>
+</script>
+<body ng-controller="ilhaFilmesController">
+  <header class="topo">
+     <div class="container"> <a class="logo" href="http://www.ilhasoft.com.br" target="_target"><img src="img/ilha.png" alt=""></a>
+     <i class="icon_menu glyphicon glyphicon-menu-hamburger btn-lg pull-right"></i>
+     </div>
+  </header>
+<div class="content">
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+           <div class="form-control "><input type="text" ng-model="filme.nome" placeholder="Título do Filme" class="input_style"></div>
+    <div class="form-control"><button ng-click="addFilme(filme);"  ng-disabled=" !filme.nome" class="btn block btn-primary bt_cadastrar">cadastrar</button></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+           <div class="panel-group">
+              <div class="panel panel-default" ng-repeat="(key, filme) in filmes">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                      {{filme.Title}}
+                    </a><a href="" ng-click="removeFilme(key)"><i class="indicator glyphicon glyphicon-remove  pull-right"></i></a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                  <div class="row">
+                  <div class="col-md-12">
+                     <div class="col-md-8">
+                     <div class="info">
+                          <p class="genre">{{filme.Genre}}</p>
+                          <p class="language_time">{{filme.Language}} : <strong>{{filme.Runtime}}</strong></p>
+                        
+                     </div>
+                     <div class="descricao">
+                     {{filme.Plot}}
+                     </div>
+                     <div class="row writer_info">
+                         <div class="col-md-4">
+                         <p><strong>Diretores</strong></p>
+                        <p> {{filme.Writer}}</p>
+                         </div>
+                         <div class="col-md-4">
+                         <p><strong>Atores</strong></p>
+                         <p>{{filme.Actors}}</p>
+                         </div>
+                     </div>
+                   </div>
+                   <div class="col-md-3">
+                   <p class="year ">{{filme.Year | limitTo:4}}</p>
+                     <img src="{{filme.Poster}}" alt="">
+                   </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+           
+            </div>
+         </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

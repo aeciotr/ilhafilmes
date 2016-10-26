@@ -1,0 +1,106 @@
+html,.content{
+	background-color: #F9F9F9
+}
+.content{
+	margin-top: 100px;
+}
+.topo{
+	background-color: #0FC48E;
+    height: 58px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 200;
+}
+
+.logo{
+	margin-top: 5px;
+	width: 182px;
+	height: 33px;
+	line-height: 50px;
+
+}
+.icon_menu{
+	color: #fff;
+	margin-top: 6px;
+}
+.input_style{
+	width: 100%;
+	height: 40px;
+	border: solid 1px #DDD; 
+	border-color: #DDDDDD;
+	background-color:#fff;
+	padding-left: 10px;
+}
+
+.bt_cadastrar{
+	color: #fff;
+    height:40px;
+	background: #318E6D;
+	width: 150px;
+	border-radius:0;
+	font-size: 18px;
+	font-weight: lighter;
+    letter-spacing: 2px;
+}
+
+.bt_cadastrar:hover{
+	color: #fff;
+    height:40px;
+	background: #318E6D;
+	width: 150px;
+	border-radius:0;
+	font-size: 18px;
+
+}
+
+.bt_cadastrar:active,.bt_cadastrar:visited,.bt_cadastrar:disabled,.bt_cadastrar:focus,.bt_cadastrar[disabled]:hover{
+	background: #318E6D;
+}
+.panel-default > .panel-heading{
+background-color:#B2B2B2;
+height: 45px;
+
+}
+.panel-title a{
+	
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: normal;
+	text-decoration: none;
+	line-height: 22px;
+	margin-left: 12px;
+}
+.info{
+	color: #fff;
+	margin-bottom: 30px;
+	
+}
+.genre{
+	color:#000;
+	font-size: 18px;
+	margin-bottom: 0px;
+}
+.language_time{
+	color: #000;
+	font-size: 14px;
+}
+.year{
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 24px;
+	color: #444444;
+	text-align: center;
+	width: 300px;
+	font-style: italic;
+}
+.descricao{
+	margin-bottom: 30px;
+}
+.writer_info{
+	color:#555555;
+}
+.panel-group {
+	font-family: 'Raleway', sans-serif;
+}
