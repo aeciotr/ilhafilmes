@@ -23,7 +23,8 @@ html,.content{
 }
 .icon_menu{
 	color: #fff;
-	margin-top: 6px;
+	margin-top: 1px;
+	font-size: 25px;
 }
 .input_style{
 	width: 100%;
@@ -83,7 +84,7 @@ html,.content{
 	margin-bottom: 0px;
 }
 .language_time{
-	color: #ddd;
+	color:#444444;
 	font-size: 14px;
 }
 .year{
