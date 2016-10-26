@@ -12,7 +12,6 @@
 <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
 <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
 <script>
-  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyD_sR81GD0ahbepSbHun5XMES_eVACaYiA",
     authDomain: "ilhafilmes-8b441.firebaseapp.com",
@@ -25,7 +24,7 @@
 <script src="js/app.js"></script>
 <script>
 </script>
-<body ng-controller="ilhaFilmesController">
+<body ng-controller="moviesController">
   <header class="topo">
      <div class="container"> <a class="logo" href="http://www.ilhasoft.com.br" target="_target"><img src="img/ilha.png" alt=""></a>
      <i class="icon_menu glyphicon glyphicon-menu-hamburger btn-lg pull-right"></i>
@@ -35,19 +34,19 @@
 <div class="container">
     <div class="row">
       <div class="col-md-12">
-           <div class="form-control "><input type="text" ng-model="filme.nome" placeholder="Título do Filme" class="input_style"></div>
-    <div class="form-control"><button ng-click="addFilme(filme);"  ng-disabled=" !filme.nome" class="btn block btn-primary bt_cadastrar">cadastrar</button></div>
+           <div class="form-control "><input type="text" ng-model="movie.nome" placeholder="Título do Filme" class="input_style"></div>
+    <div class="form-control"><button ng-click="addMovie(movie);"  ng-disabled=" !movie.nome" class="btn block btn-primary bt_cadastrar">cadastrar</button></div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
            <div class="panel-group">
-              <div class="panel panel-default" ng-repeat="(key, filme) in filmes">
+              <div class="panel panel-default" ng-repeat="(key, movie) in movies">
                 <div class="panel-heading">
                   <h4 class="panel-title">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                      {{filme.Title}}
-                    </a><a href="" ng-click="removeFilme(key)"><i class="indicator glyphicon glyphicon-remove  pull-right"></i></a>
+                      {{movie.Title}}
+                    </a><a href="" ng-click="removeMovie(key)"><i class="indicator glyphicon glyphicon-remove  pull-right"></i></a>
                     </h4>
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in">
@@ -56,27 +55,27 @@
                   <div class="col-md-12">
                      <div class="col-md-8">
                      <div class="info">
-                          <p class="genre">{{filme.Genre}}</p>
-                          <p class="language_time">{{filme.Language}} : <strong>{{filme.Runtime}}</strong></p>
+                          <p class="genre">{{movie.Genre}}</p>
+                          <p class="language_time">{{movie.Language}} : <strong>{{movie.Runtime}}</strong></p>
                         
                      </div>
                      <div class="descricao">
-                     {{filme.Plot}}
+                     {{movie.Plot}}
                      </div>
                      <div class="row writer_info">
                          <div class="col-md-4">
                          <p><strong>Diretores</strong></p>
-                        <p> {{filme.Writer}}</p>
+                        <p> {{movie.Writer}}</p>
                          </div>
                          <div class="col-md-4">
                          <p><strong>Atores</strong></p>
-                         <p>{{filme.Actors}}</p>
+                         <p>{{movie.Actors}}</p>
                          </div>
                      </div>
                    </div>
                    <div class="col-md-3">
-                   <p class="year ">{{filme.Year | limitTo:4}}</p>
-                     <img src="{{filme.Poster}}" alt="">
+                   <p class="year ">{{movie.Year | limitTo:4}}</p>
+                     <img src="{{movie.Poster}}" alt="">
                    </div>
                   </div>
                   </div>

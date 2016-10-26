@@ -59,8 +59,8 @@ html,.content{
 	background: #318E6D;
 }
 .panel-default > .panel-heading{
-background-color:#B2B2B2;
-height: 45px;
+	background-color:#B2B2B2;
+	height: 45px;
 
 }
 .panel-title a{
@@ -83,7 +83,7 @@ height: 45px;
 	margin-bottom: 0px;
 }
 .language_time{
-	color: #000;
+	color: #ddd;
 	font-size: 14px;
 }
 .year{

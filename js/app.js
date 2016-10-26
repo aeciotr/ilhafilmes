@@ -1,19 +1,19 @@
 angular.module("ilhaFilmes", ["firebase"]);
-angular.module("ilhaFilmes").controller("ilhaFilmesController",function($scope,$http,$firebaseArray){
+angular.module("ilhaFilmes").controller("moviesController",function($scope,$http,$firebaseArray){
 
     var ref = firebase.database().ref();
     var list = $firebaseArray(ref);
      
 
-    $scope.addFilme = function (filme){
-      
-      $http.get("http://www.omdbapi.com/?t="+filme.nome+"&y=&plot=full&r=json").success(function (data) {
+    $scope.addMovie = function (movie) {
+
+      $http.get("http://www.omdbapi.com/?t="+movie.nome+"&y=&plot=full&r=json").success(function (data) {
    
          if(data.Response!="False"){
 
            list.$add(data).then(function(ref){
 
-              $scope.filme.nome = '';
+              $scope.movie.nome = '';
            });
          } else {
           alert("Nenhum filme encontrado!");
@@ -22,11 +22,10 @@ angular.module("ilhaFilmes").controller("ilhaFilmesController",function($scope,$
         });
     };
 
-    $scope.removeFilme = function(key){
+    $scope.removeMovie = function (key) {
 
       list.$remove(key).then(function(ref){});
     }
 
-    $scope.filmes = list;
-
+    $scope.movies = list;
 });
