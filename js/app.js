@@ -9,18 +9,21 @@ angular.module("ilhaFilmes").controller("moviesController",function($scope,$http
 
       $http.get("http://www.omdbapi.com/?t="+movie.nome+"&y=&plot=full&r=json").success(function (data) {
    
-         if(data.Response!="False"){
+         if(data.Response!="False") {
 
-           list.$add(data).then(function(ref){
+           list.$add(data).then(function(ref) {
 
               $scope.movie.nome = '';
            });
          } else {
+
           alert("Nenhum filme encontrado!");
+
          }
 
         });
-    };
+     };
+
 
     $scope.removeMovie = function (key) {
 
